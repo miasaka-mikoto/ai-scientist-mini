@@ -20,7 +20,9 @@ jobs:
           python-version: "3.11"
       - name: Install package and packaging tools
         shell: pwsh
-        run: python -m pip install --no-build-isolation -e ".[dev]" pyinstaller
+        run: |
+          python -m pip install wheel pyinstaller pytest
+          python -m pip install --no-build-isolation -e ".[dev]"
       - name: Build and smoke-test AIScientistMini.exe
         shell: pwsh
         run: .\scripts\build_exe.ps1 -Clean -RunTests -SmokeDemo
