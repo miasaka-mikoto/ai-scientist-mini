@@ -138,9 +138,13 @@ if ($SmokeDemo) {
         if ($LASTEXITCODE -ne 0) {
             throw "Packaged demo exited with code $LASTEXITCODE"
         }
-        $reports = Get-ChildItem -LiteralPath $smokeDir -Recurse -File -ErrorAction SilentlyContinue |
-            Where-Object { $_.Name -match "report|manifest" }
-        if (-not $reports) {
+        # Check the two stable top-level artifacts directly.  This is more
+        # reliable on Windows runners than filtering a recursive provider
+        # enumeration while the packaged process has just finished writing.
+        $reportPath = Join-Path $smokeDir "research_report.md"
+        $manifestPath = Join-Path $smokeDir "reproducibility_manifest.json"
+        $reports = @($reportPath, $manifestPath) | Where-Object { Test-Path -LiteralPath $_ }
+        if ($reports.Count -lt 1) {
             throw "Packaged demo did not produce a report or reproducibility manifest."
         }
         Write-Host "Packaged demo smoke test passed ($($reports.Count) report/manifest files)."
