@@ -12,7 +12,7 @@ Rule-Based Scientist plus deterministic synthetic experiments.
 
 ```bash
 python -m venv .venv
-# Windows: .venv\\Scripts\\activate
+# Windows: .venv\Scripts\activate
 # macOS/Linux: source .venv/bin/activate
 pip install -e .
 python run_demo.py --output demo_output
@@ -30,7 +30,7 @@ For a headless run:
 python -m aiscientist.cli demo --output demo_output
 python -m aiscientist.cli inspect demo_output
 # JSON adapter boundary (offline synthetic provider)
-printf '%s\\n' '{"provider":"synthetic","seed":7,"config":{"independent_variable":"Summary","metric":"score","sample_size":8}}' | python -m aiscientist.cli adapter-run
+printf '%s\n' '{"provider":"synthetic","seed":7,"config":{"independent_variable":"Summary","metric":"score","sample_size":8}}' | python -m aiscientist.cli adapter-run
 ```
 
 The GUI is a standard-library Tkinter application. It never starts an
@@ -77,6 +77,6 @@ runs the headless 5-hypothesis/20+ run smoke test before uploading it.
 ## Extension adapters
 
 Future integrations (LLM Lab, Agent Arena, Paper2Lab and Synthetic Benchmark
-Factory) should implement `ExperimentProvider` or use the JSON/CLI adapter
-in `src/aiscientist/adapters.py`. The current project has no source dependency
-on those projects.
+Factory) should implement `ExperimentProvider` or use the JSON/CLI adapter in
+`src/aiscientist/adapters.py`. The current project has no source dependency on
+those projects.

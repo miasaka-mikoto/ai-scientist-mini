@@ -1,0 +1,291 @@
+{
+  "project": "AI Scientist Mini",
+  "中文名": "自动实验科学家",
+  "version": "0.1.0",
+  "generated_at": "2026-10-04T15:48:52+00:00",
+  "development_policy": {
+    "paid_model_api_calls": false,
+    "network_experiments": false,
+    "demo_provider": "SyntheticProvider",
+    "demo_cost": 0.0
+  },
+  "acceptance": {
+    "project": "Which memory strategy is more suitable for a long-term Agent?",
+    "hypotheses": 5,
+    "experiments": 7,
+    "runs": 26,
+    "rounds": {
+      "first": 5,
+      "second": 2
+    },
+    "cost": 0.0,
+    "database": "demo_output/memory_strategy_study.sqlite3",
+    "artifacts": {
+      "report_markdown": "demo_output/research_report.md",
+      "report_html": "demo_output/research_report.html",
+      "report_pdf": "demo_output/research_report.pdf",
+      "charts": [
+        "demo_output/memory_strategy_comparison.svg",
+        "demo_output/memory_strategy_distribution.svg"
+      ],
+      "hypothesis_graph": "demo_output/hypothesis_graph.mmd",
+      "journal": "demo_output/scientist_journal.json"
+    }
+  },
+  "tests": {
+    "command": "PYTHONPATH=src pytest -q",
+    "passed": 26
+  },
+  "packaging": {
+    "linux_binary": "dist/AIScientistMini",
+    "windows_source": "build_windows.ps1",
+    "windows_ci": ".github/workflows/build-windows.yml"
+  },
+  "files": [
+    {
+      "path": ".github/workflows/build-windows.yml",
+      "bytes": 1253,
+      "sha256": "b78cc3dd3422ae3d1d7b9cd3419b30f8c2e0ddc33392ab47eb9747e6983d25fb"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 2344,
+      "sha256": "b6f7dea2082f17ab3290248076c3dc25458254aa8eb32647cd4a5e885fd2aa7c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3752,
+      "sha256": "16333167d0a28b92daaf1f847f1a0f47051cff3a7b15f7719eb1a89ddebc698c"
+    },
+    {
+      "path": "TEST_RESULTS.txt",
+      "bytes": 531,
+      "sha256": "4cc10e9432f2ec5d22288df71a55a1eddc2aa34602400f334eab5e18d2f1a37c"
+    },
+    {
+      "path": "WINDOWS_BUILD_NOTE.md",
+      "bytes": 528,
+      "sha256": "bac9b21633c63904057774bb6d2c056ea7826be63bc193721f8013877a73c885"
+    },
+    {
+      "path": "build_linux.sh",
+      "bytes": 852,
+      "sha256": "53b0d71ef60022fb3d7ac23a888742c0599c57a1e97b866b0984dafa4838b2cc"
+    },
+    {
+      "path": "build_windows.ps1",
+      "bytes": 956,
+      "sha256": "475336e8ec86caae3143f99d94276a10d7f9a66e0881d6832aaa7e53a4216523"
+    },
+    {
+      "path": "demo_output/analysis_summary.json",
+      "bytes": 4307,
+      "sha256": "65c822e0fe12cace9a654ef1b8a2a31faa2c84f6b3471f8441771bb1e128d553"
+    },
+    {
+      "path": "demo_output/hypothesis_graph.mmd",
+      "bytes": 22383,
+      "sha256": "9ab23a5c42c2e284c8500d1db035a4d6a06547244a5e6b275e66138f3faf4cf7"
+    },
+    {
+      "path": "demo_output/memory_strategy_charts.json",
+      "bytes": 4834,
+      "sha256": "7e4daaf0608630f1dc2d0bc4a6243afe0c7e970af8afd041c5eb785981974769"
+    },
+    {
+      "path": "demo_output/memory_strategy_comparison.svg",
+      "bytes": 3481,
+      "sha256": "7e01cb41f215907eb1f06fc7e86f542f697894884945fdddb8e0d70e10194360"
+    },
+    {
+      "path": "demo_output/memory_strategy_distribution.svg",
+      "bytes": 4383,
+      "sha256": "ed1f65548bff87b9096d8eb003beb71506e46c0490d2f5838eec0aec68cbb80a"
+    },
+    {
+      "path": "demo_output/memory_strategy_report.json",
+      "bytes": 202949,
+      "sha256": "e475109095256335ad2bdcdcf59a1c6a2b447c67385cac296c613f40ac084bb1"
+    },
+    {
+      "path": "demo_output/memory_strategy_snapshot.json",
+      "bytes": 193828,
+      "sha256": "3288b73abb1c62f3e61bf2847e0eacc3ce4d6db4b9322ef0dd5c8803f088ce95"
+    },
+    {
+      "path": "demo_output/memory_strategy_study.sqlite3",
+      "bytes": 245760,
+      "sha256": "75de27f46d4cdbade8d35d2a175e323ef9b6211b9c17a24406c1d8415376382b"
+    },
+    {
+      "path": "demo_output/research_report.html",
+      "bytes": 47923,
+      "sha256": "8281151c96203717475cf1891cb7c7c37a6f2241784ba6aa8bf01548d045da47"
+    },
+    {
+      "path": "demo_output/research_report.md",
+      "bytes": 39314,
+      "sha256": "6ff7106cf0360397155dd441a2b0c487247d688b656d44c4bd736412c313812b"
+    },
+    {
+      "path": "demo_output/research_report.pdf",
+      "bytes": 18973,
+      "sha256": "148b826aeb846c4da7edee1a8245983416cb8fe7406320d8c82364e50a5e7c2f"
+    },
+    {
+      "path": "demo_output/scientist_journal.json",
+      "bytes": 15784,
+      "sha256": "b01ad09bd5e543c851a8bf363e3209c567e02f1e9037f20f91426d19bed891e4"
+    },
+    {
+      "path": "demo_output/summary.json",
+      "bytes": 685,
+      "sha256": "d8c70d79fb537d01748a2c8f92ae20177c62f7ddcd0f19708f0b3d4e21ee924d"
+    },
+    {
+      "path": "dist/AIScientistMini",
+      "bytes": 13311912,
+      "sha256": "641ceceb96f4a2fca086fd33ed17e19f83728296b0ce7f1494ba6c80940580bb"
+    },
+    {
+      "path": "launcher.py",
+      "bytes": 3434,
+      "sha256": "dab0abc91b6a710d16d332517585c579286d22334f8e9cfff0ccb1ba1846d579"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 536,
+      "sha256": "9075aaf1e4f953e8676c204390577adfff358a300bac35bbb2f2f871cad0a7c0"
+    },
+    {
+      "path": "run_demo.py",
+      "bytes": 2208,
+      "sha256": "a10cd281bd290b1eb8c6918cb911ddf522a4d10874ceac3ed85e2dfe684dd562"
+    },
+    {
+      "path": "run_ui.py",
+      "bytes": 378,
+      "sha256": "24d81d1705f5ef93492f7a58a322bd8a6c43cc2fdc80b333416a1e0160a51a0d"
+    },
+    {
+      "path": "screenshots/memory_strategy_comparison.png",
+      "bytes": 34791,
+      "sha256": "9c04920802188a13a4fcc6cfdd07e235e96a25a4aafc104041cf2ae5153d7ae7"
+    },
+    {
+      "path": "screenshots/memory_strategy_distribution.png",
+      "bytes": 30723,
+      "sha256": "9e150649802f3aea309b13a6b37cd3161e38ec027424d9927df53d32ed1f3347"
+    },
+    {
+      "path": "screenshots/research_dashboard_preview.png",
+      "bytes": 61364,
+      "sha256": "41e014e289b643576cecb1f98fe89bad7e1c93a040c88d5a083f5723056d938f"
+    },
+    {
+      "path": "src/aiscientist/__init__.py",
+      "bytes": 2504,
+      "sha256": "4c3562d6adab810ece1859051d020acbd183345593c0d6daf3832368c98a3d11"
+    },
+    {
+      "path": "src/aiscientist/adapters.py",
+      "bytes": 6421,
+      "sha256": "ad7dd90c96d96384b000ff901f2884f30e62864f51e4a015fbea2dfa439be036"
+    },
+    {
+      "path": "src/aiscientist/cli.py",
+      "bytes": 3762,
+      "sha256": "d8f5e631e1a7f6755e9f4d256fd1618abf965395d1f001e23fe8f419827481bb"
+    },
+    {
+      "path": "src/aiscientist/core/__init__.py",
+      "bytes": 757,
+      "sha256": "340d8e4d03250e2b459007d59473f8d0579c9baa300b3d1c47e4861bbd09536b"
+    },
+    {
+      "path": "src/aiscientist/core/analysis.py",
+      "bytes": 34609,
+      "sha256": "0c24715096944b88c4a8d3b9fdff5ca04bfa5d01dbda2779fac2068a0c2d5682"
+    },
+    {
+      "path": "src/aiscientist/core/demo.py",
+      "bytes": 5601,
+      "sha256": "c2e039e76a02f50a97f8f64ac1e4938da26e6b080ed817336acb75c4742dd136"
+    },
+    {
+      "path": "src/aiscientist/core/engine.py",
+      "bytes": 43523,
+      "sha256": "9a3fcd6874a00d8ea85acce08da3dc8367cf4d2fd8248ac4e6431220e9625a52"
+    },
+    {
+      "path": "src/aiscientist/core/models.py",
+      "bytes": 15571,
+      "sha256": "ff11feb9266a8c5a1fa4632de4f9717fea8f720edff59272c642c9722d2f0470"
+    },
+    {
+      "path": "src/aiscientist/core/providers.py",
+      "bytes": 10647,
+      "sha256": "022cb7701d2628a512e4fc58c73638274b213b9c5343a0890af9dc2cc3a4eb58"
+    },
+    {
+      "path": "src/aiscientist/core/store.py",
+      "bytes": 13010,
+      "sha256": "ad2e0ddc9ceca7ddc5f52e689e545dc360ba8ea17f7e5037a6fcebdb3866c0c3"
+    },
+    {
+      "path": "src/aiscientist/reporting.py",
+      "bytes": 66459,
+      "sha256": "055a8c508cdf992bdb3f3ce570a3e1a8f06563753bf64e26df83494b921556ed"
+    },
+    {
+      "path": "src/aiscientist/ui.py",
+      "bytes": 47958,
+      "sha256": "65f5632a8599394e370d43dd43b7d6025137c66501b6dd98ffcf06e98fd90c29"
+    },
+    {
+      "path": "src/aiscientist/visualization.py",
+      "bytes": 14223,
+      "sha256": "5cbdd7bc466907ce696e5b2e3f55873b687b845439032a4c81b13af982336fd5"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 514,
+      "sha256": "99f0fb7a27fce7c2003b559f2d8ac8f6885e08b59e6c969dc87230fae802a346"
+    },
+    {
+      "path": "tests/test_adapters_and_report_aggregation.py",
+      "bytes": 3164,
+      "sha256": "eb503ade2ca655ba0a17547924803f6d886b9064ad2e11416d2a106a59b16723"
+    },
+    {
+      "path": "tests/test_models_and_safety.py",
+      "bytes": 3053,
+      "sha256": "7ff964bebb105e4f3e70413eae076fcbde505b878def2241cebde19ca5a7211c"
+    },
+    {
+      "path": "tests/test_provider_analysis.py",
+      "bytes": 2566,
+      "sha256": "94eabb5a06b3904f7e2835dd162eafc7ca0d1f79e98bd68bee27f4bfa68e1fa0"
+    },
+    {
+      "path": "tests/test_reporting_acceptance.py",
+      "bytes": 2612,
+      "sha256": "5f6dd794836813b6c2f40b074348f6698ee335bad32c964e25350e1c00c1f86c"
+    },
+    {
+      "path": "tests/test_scientific_loop_acceptance.py",
+      "bytes": 7195,
+      "sha256": "746afc191ad2abfa04622edc11bbf53135303c54d12b1d6a61144dcce0f88325"
+    },
+    {
+      "path": "tests/test_store_audit_persistence.py",
+      "bytes": 2864,
+      "sha256": "64cbc96dd030a10bddc497dd6446e96b94cf3707bbddc43de436f3f8757f0f44"
+    },
+    {
+      "path": "tests/test_ui_headless.py",
+      "bytes": 797,
+      "sha256": "4efda2cc0d17ae4b5f078b2693839b6dae9ce62562fd3884923834808e58cf80"
+    }
+  ]
+}
