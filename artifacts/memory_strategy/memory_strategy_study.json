@@ -1,0 +1,1287 @@
+{
+  "available_resources": [
+    "RuleBasedScientist",
+    "SyntheticProvider",
+    "Local Python runtime"
+  ],
+  "background": "Long-term agents must retain useful information across distractors and time gaps. This demo compares five strategies in a controlled synthetic benchmark; it is not a claim about real-world agents.",
+  "budget": {
+    "currency": "USD",
+    "estimated_api_cost": 0.0,
+    "maximum_experiments": 10,
+    "maximum_runs": 40,
+    "maximum_runtime_seconds": 30
+  },
+  "code_version": "demo-1.0",
+  "completed_at": "2026-10-04T14:31:42+00:00",
+  "configurations": [
+    {
+      "control": "No Memory",
+      "dataset": "synthetic-long-horizon-memory-v1",
+      "dependent_variable": "long_horizon_recall_score",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "CFG-3078c5f4fb7e",
+      "independent_variable": "memory_strategy",
+      "metric": "recall_score",
+      "procedure": [
+        "Generate a fixed sequence of facts and distractors.",
+        "Apply the selected memory strategy between observation and query.",
+        "Ask delayed recall questions and score exact/partial recall.",
+        "Record score, success, latency, and reproducibility metadata."
+      ],
+      "sample_size": 24,
+      "seed": 20261004,
+      "strategy": "No Memory",
+      "success_criteria": "score >= 0.65"
+    },
+    {
+      "control": "No Memory",
+      "dataset": "synthetic-long-horizon-memory-v1",
+      "dependent_variable": "long_horizon_recall_score",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "CFG-135f0a844051",
+      "independent_variable": "memory_strategy",
+      "metric": "recall_score",
+      "procedure": [
+        "Generate a fixed sequence of facts and distractors.",
+        "Apply the selected memory strategy between observation and query.",
+        "Ask delayed recall questions and score exact/partial recall.",
+        "Record score, success, latency, and reproducibility metadata."
+      ],
+      "sample_size": 24,
+      "seed": 20262013,
+      "strategy": "Sliding Window",
+      "success_criteria": "score >= 0.65"
+    },
+    {
+      "control": "No Memory",
+      "dataset": "synthetic-long-horizon-memory-v1",
+      "dependent_variable": "long_horizon_recall_score",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "CFG-52a79b1f26cf",
+      "independent_variable": "memory_strategy",
+      "metric": "recall_score",
+      "procedure": [
+        "Generate a fixed sequence of facts and distractors.",
+        "Apply the selected memory strategy between observation and query.",
+        "Ask delayed recall questions and score exact/partial recall.",
+        "Record score, success, latency, and reproducibility metadata."
+      ],
+      "sample_size": 24,
+      "seed": 20263022,
+      "strategy": "Summary",
+      "success_criteria": "score >= 0.65"
+    },
+    {
+      "control": "No Memory",
+      "dataset": "synthetic-long-horizon-memory-v1",
+      "dependent_variable": "long_horizon_recall_score",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "CFG-d3dc5d9e3c39",
+      "independent_variable": "memory_strategy",
+      "metric": "recall_score",
+      "procedure": [
+        "Generate a fixed sequence of facts and distractors.",
+        "Apply the selected memory strategy between observation and query.",
+        "Ask delayed recall questions and score exact/partial recall.",
+        "Record score, success, latency, and reproducibility metadata."
+      ],
+      "sample_size": 24,
+      "seed": 20264031,
+      "strategy": "Episodic",
+      "success_criteria": "score >= 0.65"
+    },
+    {
+      "control": "No Memory",
+      "dataset": "synthetic-long-horizon-memory-v1",
+      "dependent_variable": "long_horizon_recall_score",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "CFG-154e4f7834fc",
+      "independent_variable": "memory_strategy",
+      "metric": "recall_score",
+      "procedure": [
+        "Generate a fixed sequence of facts and distractors.",
+        "Apply the selected memory strategy between observation and query.",
+        "Ask delayed recall questions and score exact/partial recall.",
+        "Record score, success, latency, and reproducibility metadata."
+      ],
+      "sample_size": 24,
+      "seed": 20265040,
+      "strategy": "Vector",
+      "success_criteria": "score >= 0.65"
+    }
+  ],
+  "constraints": [
+    "No network access or paid model API",
+    "Deterministic seed and fixed synthetic data generator",
+    "Results are evidence for this benchmark only, not scientific truth"
+  ],
+  "created_at": "2026-10-04T14:31:42+00:00",
+  "decisions": [
+    {
+      "evidence_id": "EVD-92ea2c719183",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "DEC-78fdd31cb61b",
+      "new_confidence": 0.2509,
+      "previous_confidence": 0.5,
+      "round": 1,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-81d547b50bde",
+        "RUN-684305b7fb0a",
+        "RUN-22d9bd07181b",
+        "RUN-beeddd4e0562"
+      ],
+      "status": "Rejected",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-6951752c9711",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "DEC-c0e8de617dbb",
+      "new_confidence": 0.7053,
+      "previous_confidence": 0.5,
+      "round": 1,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-e4cecf19ee80",
+        "RUN-812c5ed39afa",
+        "RUN-7effbbf1b765",
+        "RUN-9d95d155166c"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-24b8553c6f16",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "DEC-c7b616deab5e",
+      "new_confidence": 0.9255,
+      "previous_confidence": 0.5,
+      "round": 1,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-68a467f5503c",
+        "RUN-259cebb8de3a",
+        "RUN-da74d1b75b7e",
+        "RUN-47d3f0390086"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-bfe21bf896c0",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "DEC-42bb7e03eec0",
+      "new_confidence": 0.9476,
+      "previous_confidence": 0.5,
+      "round": 1,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-db24dce8c606",
+        "RUN-e9b8e4f94ffd",
+        "RUN-b123606c0328",
+        "RUN-53e61d6cc9f9"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-714d0c0a2fce",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "DEC-469bc449c35c",
+      "new_confidence": 0.9451,
+      "previous_confidence": 0.5,
+      "round": 1,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-36e8e5c84f5f",
+        "RUN-b6b247d8f386",
+        "RUN-7d3de902d053",
+        "RUN-9b58d9a19c8a"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "candidate_summaries": {
+        "Episodic": {
+          "ci95": [
+            0.866113,
+            0.943419
+          ],
+          "effect_size": 11.175664,
+          "mean": 0.904766,
+          "median": 0.923196,
+          "n": 4,
+          "std": 0.039442,
+          "success_rate": 1.0
+        },
+        "No Memory": {
+          "ci95": [
+            0.416213,
+            0.496218
+          ],
+          "effect_size": 0.0,
+          "mean": 0.456215,
+          "median": 0.461387,
+          "n": 4,
+          "std": 0.040819,
+          "success_rate": 0.0
+        },
+        "Sliding Window": {
+          "ci95": [
+            0.593746,
+            0.743853
+          ],
+          "effect_size": 3.464226,
+          "mean": 0.668799,
+          "median": 0.686727,
+          "n": 4,
+          "std": 0.076585,
+          "success_rate": 0.75
+        },
+        "Summary": {
+          "ci95": [
+            0.8551,
+            0.874054
+          ],
+          "effect_size": 13.767055,
+          "mean": 0.864577,
+          "median": 0.867208,
+          "n": 4,
+          "std": 0.00967,
+          "success_rate": 1.0
+        },
+        "Vector": {
+          "ci95": [
+            0.830361,
+            0.970153
+          ],
+          "effect_size": 7.641621,
+          "mean": 0.900257,
+          "median": 0.916354,
+          "n": 4,
+          "std": 0.071323,
+          "success_rate": 1.0
+        }
+      },
+      "id": "DEC-398c6f4e7dc5",
+      "round": 2,
+      "rule": "Best Expected Information (best mean) + Uncertainty First (closest success rate to 0.5)",
+      "selected_configuration_ids": [
+        "CFG-d3dc5d9e3c39",
+        "CFG-135f0a844051"
+      ],
+      "type": "experiment_selection"
+    },
+    {
+      "evidence_id": "EVD-d1fee24159ca",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "DEC-19ae1080fe34",
+      "new_confidence": 0.2509,
+      "previous_confidence": 0.2509,
+      "round": 2,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-81d547b50bde",
+        "RUN-684305b7fb0a",
+        "RUN-22d9bd07181b",
+        "RUN-beeddd4e0562"
+      ],
+      "status": "Rejected",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-e284dc173a8e",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "DEC-09cd37ef232c",
+      "new_confidence": 0.7579,
+      "previous_confidence": 0.7053,
+      "round": 2,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-e4cecf19ee80",
+        "RUN-812c5ed39afa",
+        "RUN-7effbbf1b765",
+        "RUN-9d95d155166c",
+        "RUN-cd7978e0856e",
+        "RUN-7fefd5eb5309",
+        "RUN-449c46f7a91a"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-509c310040e1",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "DEC-b832a464fd35",
+      "new_confidence": 0.9255,
+      "previous_confidence": 0.9255,
+      "round": 2,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-68a467f5503c",
+        "RUN-259cebb8de3a",
+        "RUN-da74d1b75b7e",
+        "RUN-47d3f0390086"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-103d9e25987a",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "DEC-e4d0ca315a03",
+      "new_confidence": 0.9365,
+      "previous_confidence": 0.9476,
+      "round": 2,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-db24dce8c606",
+        "RUN-e9b8e4f94ffd",
+        "RUN-b123606c0328",
+        "RUN-53e61d6cc9f9",
+        "RUN-6960c218679a",
+        "RUN-54eb7a57ffb5",
+        "RUN-d0ad6311baa7"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    },
+    {
+      "evidence_id": "EVD-7b76d1c334e5",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "DEC-2b1d139b6563",
+      "new_confidence": 0.9451,
+      "previous_confidence": 0.9451,
+      "round": 2,
+      "rule": "confidence = clamp(0.55 * mean_score + 0.45 * success_rate, 0.01, 0.99); status thresholds 0.68/0.48",
+      "source_run_ids": [
+        "RUN-36e8e5c84f5f",
+        "RUN-b6b247d8f386",
+        "RUN-7d3de902d053",
+        "RUN-9b58d9a19c8a"
+      ],
+      "status": "Supported",
+      "type": "hypothesis_update"
+    }
+  ],
+  "experiments": [
+    {
+      "configuration_id": "CFG-3078c5f4fb7e",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "EXP-1057bbda8366",
+      "result_summary": {
+        "ci95": [
+          0.416213,
+          0.496218
+        ],
+        "effect_size": 0.0,
+        "mean": 0.456215,
+        "median": 0.461387,
+        "n": 4,
+        "std": 0.040819,
+        "success_rate": 0.0
+      },
+      "round": 1,
+      "run_ids": [
+        "RUN-81d547b50bde",
+        "RUN-684305b7fb0a",
+        "RUN-22d9bd07181b",
+        "RUN-beeddd4e0562"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Random (coverage pass)",
+      "status": "Complete",
+      "why": "Initial coverage: execute one equal-sized batch for every candidate."
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "EXP-9a77982f3f61",
+      "result_summary": {
+        "ci95": [
+          0.593746,
+          0.743853
+        ],
+        "effect_size": 0.0,
+        "mean": 0.668799,
+        "median": 0.686727,
+        "n": 4,
+        "std": 0.076585,
+        "success_rate": 0.75
+      },
+      "round": 1,
+      "run_ids": [
+        "RUN-e4cecf19ee80",
+        "RUN-812c5ed39afa",
+        "RUN-7effbbf1b765",
+        "RUN-9d95d155166c"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Random (coverage pass)",
+      "status": "Complete",
+      "why": "Initial coverage: execute one equal-sized batch for every candidate."
+    },
+    {
+      "configuration_id": "CFG-52a79b1f26cf",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "EXP-698072123c3d",
+      "result_summary": {
+        "ci95": [
+          0.8551,
+          0.874054
+        ],
+        "effect_size": 0.0,
+        "mean": 0.864577,
+        "median": 0.867208,
+        "n": 4,
+        "std": 0.00967,
+        "success_rate": 1.0
+      },
+      "round": 1,
+      "run_ids": [
+        "RUN-68a467f5503c",
+        "RUN-259cebb8de3a",
+        "RUN-da74d1b75b7e",
+        "RUN-47d3f0390086"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Random (coverage pass)",
+      "status": "Complete",
+      "why": "Initial coverage: execute one equal-sized batch for every candidate."
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "EXP-8f7a8fd41060",
+      "result_summary": {
+        "ci95": [
+          0.866113,
+          0.943419
+        ],
+        "effect_size": 0.0,
+        "mean": 0.904766,
+        "median": 0.923196,
+        "n": 4,
+        "std": 0.039442,
+        "success_rate": 1.0
+      },
+      "round": 1,
+      "run_ids": [
+        "RUN-db24dce8c606",
+        "RUN-e9b8e4f94ffd",
+        "RUN-b123606c0328",
+        "RUN-53e61d6cc9f9"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Random (coverage pass)",
+      "status": "Complete",
+      "why": "Initial coverage: execute one equal-sized batch for every candidate."
+    },
+    {
+      "configuration_id": "CFG-154e4f7834fc",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "EXP-a07ba11f6884",
+      "result_summary": {
+        "ci95": [
+          0.830361,
+          0.970153
+        ],
+        "effect_size": 0.0,
+        "mean": 0.900257,
+        "median": 0.916354,
+        "n": 4,
+        "std": 0.071323,
+        "success_rate": 1.0
+      },
+      "round": 1,
+      "run_ids": [
+        "RUN-36e8e5c84f5f",
+        "RUN-b6b247d8f386",
+        "RUN-7d3de902d053",
+        "RUN-9b58d9a19c8a"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Random (coverage pass)",
+      "status": "Complete",
+      "why": "Initial coverage: execute one equal-sized batch for every candidate."
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "EXP-045c3660021c",
+      "result_summary": {
+        "ci95": [
+          0.785414,
+          0.929902
+        ],
+        "effect_size": 0.0,
+        "mean": 0.857658,
+        "median": 0.823494,
+        "n": 3,
+        "std": 0.063842,
+        "success_rate": 1.0
+      },
+      "round": 2,
+      "run_ids": [
+        "RUN-6960c218679a",
+        "RUN-54eb7a57ffb5",
+        "RUN-d0ad6311baa7"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Best Expected Information + Uncertainty First",
+      "status": "Complete",
+      "why": "Follow-up evidence for the strongest current candidate and the most uncertain candidate."
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "EXP-603b1eb1af42",
+      "result_summary": {
+        "ci95": [
+          0.683037,
+          0.691408
+        ],
+        "effect_size": 0.0,
+        "mean": 0.687222,
+        "median": 0.686261,
+        "n": 3,
+        "std": 0.003699,
+        "success_rate": 1.0
+      },
+      "round": 2,
+      "run_ids": [
+        "RUN-cd7978e0856e",
+        "RUN-7fefd5eb5309",
+        "RUN-449c46f7a91a"
+      ],
+      "selected_at": "2026-10-04T14:31:42+00:00",
+      "selection_rule": "Best Expected Information + Uncertainty First",
+      "status": "Complete",
+      "why": "Follow-up evidence for the strongest current candidate and the most uncertain candidate."
+    }
+  ],
+  "hypotheses": [
+    {
+      "confidence": 0.2509,
+      "evidence": [
+        "EVD-92ea2c719183",
+        "EVD-d1fee24159ca"
+      ],
+      "id": "H-fad9ddc8ff15",
+      "predictions": [
+        "Lowest long-horizon retention; useful baseline for comparison."
+      ],
+      "rationale": "A no-state baseline may be fastest but should forget earlier facts.",
+      "statement": "No Memory is a suitable strategy for long-term agent memory.",
+      "status": "Rejected",
+      "test_method": "Run the deterministic long-horizon synthetic memory benchmark and compare success rate and score."
+    },
+    {
+      "confidence": 0.7579,
+      "evidence": [
+        "EVD-6951752c9711",
+        "EVD-e284dc173a8e"
+      ],
+      "id": "H-feac2ef4f127",
+      "predictions": [
+        "Better than no memory on short gaps, weaker on long gaps."
+      ],
+      "rationale": "Keeping the latest turns may preserve nearby context at bounded cost.",
+      "statement": "Sliding Window is a suitable strategy for long-term agent memory.",
+      "status": "Supported",
+      "test_method": "Run the deterministic long-horizon synthetic memory benchmark and compare success rate and score."
+    },
+    {
+      "confidence": 0.9255,
+      "evidence": [
+        "EVD-24b8553c6f16",
+        "EVD-509c310040e1"
+      ],
+      "id": "H-8e76a94ac832",
+      "predictions": [
+        "High retention with moderate latency and stable success rate."
+      ],
+      "rationale": "A compressed summary may preserve durable facts while limiting context growth.",
+      "statement": "Summary is a suitable strategy for long-term agent memory.",
+      "status": "Supported",
+      "test_method": "Run the deterministic long-horizon synthetic memory benchmark and compare success rate and score."
+    },
+    {
+      "confidence": 0.9365,
+      "evidence": [
+        "EVD-bfe21bf896c0",
+        "EVD-103d9e25987a"
+      ],
+      "id": "H-50d0c5511b99",
+      "predictions": [
+        "High retention and the strongest overall success rate in this synthetic task."
+      ],
+      "rationale": "Retrieving task episodes may preserve relevant experiences over long gaps.",
+      "statement": "Episodic is a suitable strategy for long-term agent memory.",
+      "status": "Supported",
+      "test_method": "Run the deterministic long-horizon synthetic memory benchmark and compare success rate and score."
+    },
+    {
+      "confidence": 0.9451,
+      "evidence": [
+        "EVD-714d0c0a2fce",
+        "EVD-7b76d1c334e5"
+      ],
+      "id": "H-a56ad3f24408",
+      "predictions": [
+        "High retention but occasional retrieval noise and higher variance."
+      ],
+      "rationale": "Similarity retrieval may find relevant facts, with possible retrieval noise.",
+      "statement": "Vector is a suitable strategy for long-term agent memory.",
+      "status": "Supported",
+      "test_method": "Run the deterministic long-horizon synthetic memory benchmark and compare success rate and score."
+    }
+  ],
+  "id": "study-01690e587519",
+  "journal": [
+    {
+      "event": "study_created",
+      "public_summary": "Created five candidate memory hypotheses and deterministic configurations.",
+      "timestamp": "2026-10-04T14:31:42+00:00"
+    },
+    {
+      "event": "round_complete",
+      "public_summary": "Initial coverage completed; confidence updated from observed scores and success rates.",
+      "round": 1,
+      "timestamp": "2026-10-04T14:31:42+00:00"
+    },
+    {
+      "event": "next_experiment_selected",
+      "public_summary": "Selected a best-performing and an uncertain strategy for follow-up evidence.",
+      "round": 2,
+      "selected_strategies": [
+        "Episodic",
+        "Sliding Window"
+      ],
+      "timestamp": "2026-10-04T14:31:42+00:00"
+    },
+    {
+      "event": "study_complete",
+      "public_summary": "Two-round synthetic study completed; report and charts can be generated from the audit trail.",
+      "timestamp": "2026-10-04T14:31:42+00:00"
+    }
+  ],
+  "metrics": [
+    "mean",
+    "median",
+    "std",
+    "confidence_interval_95",
+    "effect_size_vs_control",
+    "success_rate"
+  ],
+  "name": "Memory Strategy Study",
+  "research_question": "Which memory strategy is most suitable for a long-term agent under a bounded synthetic research budget?",
+  "runs": [
+    {
+      "configuration_id": "CFG-3078c5f4fb7e",
+      "data_hash": "92df870b7872ed77bba99fa85d869fb7befdc149b8ed3f1f8315fa6ebab598ac",
+      "error_class": null,
+      "experiment_id": "EXP-1057bbda8366",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "RUN-81d547b50bde",
+      "latency_ms": 43.483,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.014",
+        "success criterion not met"
+      ],
+      "round": 1,
+      "run_index": 0,
+      "score": 0.464615,
+      "seed": 20361004,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "No Memory",
+      "success": false
+    },
+    {
+      "configuration_id": "CFG-3078c5f4fb7e",
+      "data_hash": "8ceafdf1d4919fa443b8455b4d9793b8662cc43e9c09d2a00cb84c244cd01443",
+      "error_class": null,
+      "experiment_id": "EXP-1057bbda8366",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "RUN-684305b7fb0a",
+      "latency_ms": 44.185,
+      "observations": [
+        "gap=0.04",
+        "distractor_penalty=0.038",
+        "success criterion not met"
+      ],
+      "round": 1,
+      "run_index": 1,
+      "score": 0.401695,
+      "seed": 20361005,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "No Memory",
+      "success": false
+    },
+    {
+      "configuration_id": "CFG-3078c5f4fb7e",
+      "data_hash": "0f1488db2b6bcdf5c4241f17a333b05a18e4a4b049aaf276c4b80ab414b94929",
+      "error_class": null,
+      "experiment_id": "EXP-1057bbda8366",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "RUN-22d9bd07181b",
+      "latency_ms": 43.033,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.010",
+        "success criterion not met"
+      ],
+      "round": 1,
+      "run_index": 2,
+      "score": 0.500394,
+      "seed": 20361006,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "No Memory",
+      "success": false
+    },
+    {
+      "configuration_id": "CFG-3078c5f4fb7e",
+      "data_hash": "6f7a76d8ee8312ee757137e8f0319c8b7390fdbceea57c49c57ff3b3887a6d30",
+      "error_class": null,
+      "experiment_id": "EXP-1057bbda8366",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-fad9ddc8ff15",
+      "id": "RUN-beeddd4e0562",
+      "latency_ms": 44.89,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.017",
+        "success criterion not met"
+      ],
+      "round": 1,
+      "run_index": 3,
+      "score": 0.458158,
+      "seed": 20361007,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "No Memory",
+      "success": false
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "67eb01b7487dcd503f59bf9bb8cfd67bd5ea8dbacb0d14bef6714c556000ce11",
+      "error_class": null,
+      "experiment_id": "EXP-9a77982f3f61",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-e4cecf19ee80",
+      "latency_ms": 49.556,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.018",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 0,
+      "score": 0.683026,
+      "seed": 20362013,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "3aa96d314df3c5ffb9c7371675c2b7257b3fdd37d45bc7452cb1341c2f575f6e",
+      "error_class": null,
+      "experiment_id": "EXP-9a77982f3f61",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-812c5ed39afa",
+      "latency_ms": 53.693,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.009",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 1,
+      "score": 0.741102,
+      "seed": 20362014,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "74cc1b109c6a580d4b706ca547478d7e306d1236c7fda5547a1f05718acf91e7",
+      "error_class": null,
+      "experiment_id": "EXP-9a77982f3f61",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-7effbbf1b765",
+      "latency_ms": 55.583,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.028",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 2,
+      "score": 0.690427,
+      "seed": 20362015,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "d4dca88de4ea696ba95846edca4dcd54385279d031d823d27090cdcdb6b8fca1",
+      "error_class": null,
+      "experiment_id": "EXP-9a77982f3f61",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-9d95d155166c",
+      "latency_ms": 50.483,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.049",
+        "success criterion not met"
+      ],
+      "round": 1,
+      "run_index": 3,
+      "score": 0.560642,
+      "seed": 20362016,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": false
+    },
+    {
+      "configuration_id": "CFG-52a79b1f26cf",
+      "data_hash": "753cb0db7fb40c1be50303a38a8dd99d1abf00de1d16061716d9c9d78ffb5245",
+      "error_class": null,
+      "experiment_id": "EXP-698072123c3d",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "RUN-68a467f5503c",
+      "latency_ms": 68.566,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.027",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 0,
+      "score": 0.872714,
+      "seed": 20363022,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Summary",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-52a79b1f26cf",
+      "data_hash": "a518e3e690c1b56649e3235b01543e22ea578f58981f34dd16ea41df22ec59c3",
+      "error_class": null,
+      "experiment_id": "EXP-698072123c3d",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "RUN-259cebb8de3a",
+      "latency_ms": 66.422,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.010",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 1,
+      "score": 0.863969,
+      "seed": 20363023,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Summary",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-52a79b1f26cf",
+      "data_hash": "568c4caa0e1323ec58cb52d81a247028af0133fe27bbf166dd8a2ec49dbad68d",
+      "error_class": null,
+      "experiment_id": "EXP-698072123c3d",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "RUN-da74d1b75b7e",
+      "latency_ms": 66.955,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.032",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 2,
+      "score": 0.851179,
+      "seed": 20363024,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Summary",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-52a79b1f26cf",
+      "data_hash": "2c157cc4d5e295e5b40258725cc9d2f474346f942e1a0510c122b3cece363cab",
+      "error_class": null,
+      "experiment_id": "EXP-698072123c3d",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-8e76a94ac832",
+      "id": "RUN-47d3f0390086",
+      "latency_ms": 60.838,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.046",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 3,
+      "score": 0.870447,
+      "seed": 20363025,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Summary",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "9e6c6815cedaafb7373dd2adcd17a89e3ec64204381e9dded14d7e38e8100e74",
+      "error_class": null,
+      "experiment_id": "EXP-8f7a8fd41060",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-db24dce8c606",
+      "latency_ms": 70.476,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.060",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 0,
+      "score": 0.845819,
+      "seed": 20364031,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "01b60b7f7841fb0a524d2ad0eab7ff6bd94b3a8e01274d3d7db4e4fe8d1b72c9",
+      "error_class": null,
+      "experiment_id": "EXP-8f7a8fd41060",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-e9b8e4f94ffd",
+      "latency_ms": 78.526,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.044",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 1,
+      "score": 0.926854,
+      "seed": 20364032,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "652cb27e1423c8b81b2ab3b8ec23ce0b9330c5c434774ba6c737e6cb35033ed3",
+      "error_class": null,
+      "experiment_id": "EXP-8f7a8fd41060",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-b123606c0328",
+      "latency_ms": 73.723,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.000",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 2,
+      "score": 0.91966,
+      "seed": 20364033,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "cec2a496470e1b3fd5855e39a8f4a85c8f58b182380b7919ac31249c61073214",
+      "error_class": null,
+      "experiment_id": "EXP-8f7a8fd41060",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-53e61d6cc9f9",
+      "latency_ms": 72.041,
+      "observations": [
+        "gap=0.04",
+        "distractor_penalty=0.022",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 3,
+      "score": 0.926731,
+      "seed": 20364034,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-154e4f7834fc",
+      "data_hash": "e238d8f01d699866b0148b26a1ef27d0ce5dd206ecdc846a21f3c00af35c87ba",
+      "error_class": null,
+      "experiment_id": "EXP-a07ba11f6884",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "RUN-36e8e5c84f5f",
+      "latency_ms": 78.853,
+      "observations": [
+        "gap=0.02",
+        "distractor_penalty=0.021",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 0,
+      "score": 0.9684,
+      "seed": 20365040,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Vector",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-154e4f7834fc",
+      "data_hash": "052d0267aafea4950bf099f0d0e2f2690cbd89d273b2be81513551ccc860e51c",
+      "error_class": null,
+      "experiment_id": "EXP-a07ba11f6884",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "RUN-b6b247d8f386",
+      "latency_ms": 82.862,
+      "observations": [
+        "gap=0.04",
+        "distractor_penalty=0.004",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 1,
+      "score": 0.920324,
+      "seed": 20365041,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Vector",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-154e4f7834fc",
+      "data_hash": "cf27395e20a6734aa617eda57abf7f00986ed77fa041ea82ec0a8bda598a75e3",
+      "error_class": null,
+      "experiment_id": "EXP-a07ba11f6884",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "RUN-7d3de902d053",
+      "latency_ms": 87.871,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.041",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 2,
+      "score": 0.912385,
+      "seed": 20365042,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Vector",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-154e4f7834fc",
+      "data_hash": "424a72cc5467e3fe6ed2d3d45574056c8cab32fe2bf28a747a29f4c515c1514e",
+      "error_class": null,
+      "experiment_id": "EXP-a07ba11f6884",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-a56ad3f24408",
+      "id": "RUN-9b58d9a19c8a",
+      "latency_ms": 78.537,
+      "observations": [
+        "gap=0.04",
+        "distractor_penalty=0.020",
+        "success criterion met"
+      ],
+      "round": 1,
+      "run_index": 3,
+      "score": 0.79992,
+      "seed": 20365043,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Vector",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "d20a038267586e9644c4c99c89e5da6e86fc8d47d5640880704ab09d0e1e2412",
+      "error_class": null,
+      "experiment_id": "EXP-045c3660021c",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-6960c218679a",
+      "latency_ms": 77.634,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.035",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 0,
+      "score": 0.931312,
+      "seed": 20464031,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "de1b6c67ed56e8ad3ad2a0e52eb792968cc804b3c013ecbdab9336c356346129",
+      "error_class": null,
+      "experiment_id": "EXP-045c3660021c",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-54eb7a57ffb5",
+      "latency_ms": 75.729,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.060",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 1,
+      "score": 0.823494,
+      "seed": 20464032,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-d3dc5d9e3c39",
+      "data_hash": "4df85dffa6f8d0659560c1a1f722be38a343d8e07e0c5c5be58b21777fb051e9",
+      "error_class": null,
+      "experiment_id": "EXP-045c3660021c",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-50d0c5511b99",
+      "id": "RUN-d0ad6311baa7",
+      "latency_ms": 70.631,
+      "observations": [
+        "gap=0.11",
+        "distractor_penalty=0.046",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 2,
+      "score": 0.818167,
+      "seed": 20464033,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Episodic",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "6af5a454950ac7359c292f055b0a9d0fc4321971d589815c482333eb44e2ce3d",
+      "error_class": null,
+      "experiment_id": "EXP-603b1eb1af42",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-cd7978e0856e",
+      "latency_ms": 52.7,
+      "observations": [
+        "gap=0.07",
+        "distractor_penalty=0.052",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 0,
+      "score": 0.686261,
+      "seed": 20462013,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "d36c8e6763433ee63cb3166414937efa048d5cb62f06e72e274afb61d75c4c16",
+      "error_class": null,
+      "experiment_id": "EXP-603b1eb1af42",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-7fefd5eb5309",
+      "latency_ms": 49.343,
+      "observations": [
+        "gap=0.00",
+        "distractor_penalty=0.028",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 1,
+      "score": 0.684099,
+      "seed": 20462014,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    },
+    {
+      "configuration_id": "CFG-135f0a844051",
+      "data_hash": "70a56c3b310612a177a204e7b572dd38be007fba07a32d56a1ac9d9045e7b71f",
+      "error_class": null,
+      "experiment_id": "EXP-603b1eb1af42",
+      "finished_at": "2026-10-04T14:31:42+00:00",
+      "hypothesis_id": "H-feac2ef4f127",
+      "id": "RUN-449c46f7a91a",
+      "latency_ms": 48.823,
+      "observations": [
+        "gap=0.04",
+        "distractor_penalty=0.006",
+        "success criterion met"
+      ],
+      "round": 2,
+      "run_index": 2,
+      "score": 0.691307,
+      "seed": 20462015,
+      "started_at": "2026-10-04T14:31:42+00:00",
+      "status": "Complete",
+      "strategy": "Sliding Window",
+      "success": true
+    }
+  ],
+  "scope": [
+    "Synthetic memory benchmark",
+    "Five candidate strategies",
+    "Two experiment-selection rounds"
+  ]
+}

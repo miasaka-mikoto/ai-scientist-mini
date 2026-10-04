@@ -1,0 +1,17 @@
+{
+  "study": "artifacts/memory_strategy/memory_strategy_study.json",
+  "core_database": "artifacts/memory_strategy/memory_strategy_study.sqlite3",
+  "report": "artifacts/memory_strategy/research_report.md",
+  "html_report": "artifacts/memory_strategy/research_report.html",
+  "charts": {
+    "mean_score": "artifacts/memory_strategy/charts/mean_score_by_strategy.svg",
+    "success_rate": "artifacts/memory_strategy/charts/success_rate_by_strategy.svg",
+    "round_comparison": "artifacts/memory_strategy/charts/mean_score_by_round.svg",
+    "source_extract": "artifacts/memory_strategy/charts/chart_data.json",
+    "mean_score_png": "artifacts/memory_strategy/charts/mean_score_by_strategy.png",
+    "success_rate_png": "artifacts/memory_strategy/charts/success_rate_by_strategy.png"
+  },
+  "dashboard_snapshot": "artifacts/memory_strategy/dashboard_snapshot.png",
+  "run_count": 26,
+  "experiment_count": 7
+}

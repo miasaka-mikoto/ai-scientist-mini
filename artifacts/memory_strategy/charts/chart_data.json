@@ -1,0 +1,142 @@
+{
+  "study_id": "study-01690e587519",
+  "source_run_ids": [
+    "RUN-81d547b50bde",
+    "RUN-684305b7fb0a",
+    "RUN-22d9bd07181b",
+    "RUN-beeddd4e0562",
+    "RUN-e4cecf19ee80",
+    "RUN-812c5ed39afa",
+    "RUN-7effbbf1b765",
+    "RUN-9d95d155166c",
+    "RUN-68a467f5503c",
+    "RUN-259cebb8de3a",
+    "RUN-da74d1b75b7e",
+    "RUN-47d3f0390086",
+    "RUN-db24dce8c606",
+    "RUN-e9b8e4f94ffd",
+    "RUN-b123606c0328",
+    "RUN-53e61d6cc9f9",
+    "RUN-36e8e5c84f5f",
+    "RUN-b6b247d8f386",
+    "RUN-7d3de902d053",
+    "RUN-9b58d9a19c8a",
+    "RUN-6960c218679a",
+    "RUN-54eb7a57ffb5",
+    "RUN-d0ad6311baa7",
+    "RUN-cd7978e0856e",
+    "RUN-7fefd5eb5309",
+    "RUN-449c46f7a91a"
+  ],
+  "summaries_by_strategy": {
+    "No Memory": {
+      "n": 4,
+      "mean": 0.456215,
+      "median": 0.461387,
+      "std": 0.040819,
+      "ci95": [
+        0.416213,
+        0.496218
+      ],
+      "success_rate": 0.0,
+      "effect_size": 0.0
+    },
+    "Sliding Window": {
+      "n": 7,
+      "mean": 0.676695,
+      "median": 0.686261,
+      "std": 0.055083,
+      "ci95": [
+        0.635889,
+        0.717501
+      ],
+      "success_rate": 0.857143,
+      "effect_size": 4.342249
+    },
+    "Summary": {
+      "n": 4,
+      "mean": 0.864577,
+      "median": 0.867208,
+      "std": 0.00967,
+      "ci95": [
+        0.8551,
+        0.874054
+      ],
+      "success_rate": 1.0,
+      "effect_size": 13.767055
+    },
+    "Episodic": {
+      "n": 7,
+      "mean": 0.884577,
+      "median": 0.91966,
+      "std": 0.052635,
+      "ci95": [
+        0.845584,
+        0.92357
+      ],
+      "success_rate": 1.0,
+      "effect_size": 8.739608
+    },
+    "Vector": {
+      "n": 4,
+      "mean": 0.900257,
+      "median": 0.916354,
+      "std": 0.071323,
+      "ci95": [
+        0.830361,
+        0.970153
+      ],
+      "success_rate": 1.0,
+      "effect_size": 7.641621
+    }
+  },
+  "rounds": {
+    "1": {
+      "No Memory": [
+        "RUN-81d547b50bde",
+        "RUN-684305b7fb0a",
+        "RUN-22d9bd07181b",
+        "RUN-beeddd4e0562"
+      ],
+      "Sliding Window": [
+        "RUN-e4cecf19ee80",
+        "RUN-812c5ed39afa",
+        "RUN-7effbbf1b765",
+        "RUN-9d95d155166c"
+      ],
+      "Summary": [
+        "RUN-68a467f5503c",
+        "RUN-259cebb8de3a",
+        "RUN-da74d1b75b7e",
+        "RUN-47d3f0390086"
+      ],
+      "Episodic": [
+        "RUN-db24dce8c606",
+        "RUN-e9b8e4f94ffd",
+        "RUN-b123606c0328",
+        "RUN-53e61d6cc9f9"
+      ],
+      "Vector": [
+        "RUN-36e8e5c84f5f",
+        "RUN-b6b247d8f386",
+        "RUN-7d3de902d053",
+        "RUN-9b58d9a19c8a"
+      ]
+    },
+    "2": {
+      "No Memory": [],
+      "Sliding Window": [
+        "RUN-cd7978e0856e",
+        "RUN-7fefd5eb5309",
+        "RUN-449c46f7a91a"
+      ],
+      "Summary": [],
+      "Episodic": [
+        "RUN-6960c218679a",
+        "RUN-54eb7a57ffb5",
+        "RUN-d0ad6311baa7"
+      ],
+      "Vector": []
+    }
+  }
+}

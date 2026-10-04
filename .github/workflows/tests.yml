@@ -1,0 +1,20 @@
+name: offline-tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package without external providers
+        run: python -m pip install --no-build-isolation --no-deps -e .
+      - name: Run offline test suite
+        run: python -m pytest -q
+      - name: Run deterministic demo smoke
+        run: python -m ai_scientist_mini demo memory-strategy --data-dir artifacts/ci_demo

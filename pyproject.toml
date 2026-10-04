@@ -5,12 +5,19 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ai-scientist-mini"
 version = "0.1.0"
-description = "Offline, auditable Rule-Based Scientist and synthetic experiment workbench"
-requires-python = ">=3.10"
-dependencies = ["numpy>=1.23", "matplotlib>=3.6"]
+description = "Local, auditable, budget-controlled scientific experimentation workbench"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "AI Scientist Mini contributors"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
 
 [project.scripts]
-aiscientist-mini = "aiscientist.cli:main"
+aiscientist-mini = "ai_scientist_mini.__main__:main"
+ai-scientist-integrations = "ai_scientist_mini.integrations.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -21,4 +28,8 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-
+addopts = "-ra"
+markers = [
+  "slow: tests that may take longer than a few seconds",
+  "external: requires an explicitly enabled external provider (not run by default)",
+]

@@ -1,0 +1,8 @@
+{
+  "mean_score": "artifacts/memory_strategy/charts/mean_score_by_strategy.svg",
+  "success_rate": "artifacts/memory_strategy/charts/success_rate_by_strategy.svg",
+  "round_comparison": "artifacts/memory_strategy/charts/mean_score_by_round.svg",
+  "source_extract": "artifacts/memory_strategy/charts/chart_data.json",
+  "mean_score_png": "artifacts/memory_strategy/charts/mean_score_by_strategy.png",
+  "success_rate_png": "artifacts/memory_strategy/charts/success_rate_by_strategy.png"
+}
