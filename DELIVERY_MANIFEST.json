@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "delivery_date": "2026-10-04",
   "github": "https://github.com/miasaka-mikoto/ai-scientist-mini",
-  "local_commit": "f77debf",
-  "github_commit": "6e27d4b49cb4aaed715bcd593d3e0a4f5b61f796",
+  "local_commit": "a25f354",
+  "github_commit": "00e3542e8a98d084a6548c9787a95479f3527743",
   "demo": {
     "study": "Memory Strategy Study",
     "hypotheses": 5,
