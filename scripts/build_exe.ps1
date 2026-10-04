@@ -130,13 +130,14 @@ if ($SmokeDemo) {
     try {
         # The executable may expose either `demo memory-strategy` or `demo`; use the
         # documented command first and fail with its output if the CLI contract differs.
-        if ($OneFile) {
-            & $exe "demo" "memory-strategy" "--data-dir" $smokeDir
-        } else {
-            & $exe "demo" "memory-strategy" "--data-dir" $smokeDir
-        }
-        if ($LASTEXITCODE -ne 0) {
-            throw "Packaged demo exited with code $LASTEXITCODE"
+        # ``--windowed`` produces a GUI-subsystem executable on Windows.  Use
+        # Start-Process -Wait so PowerShell does not continue while that child
+        # is still writing its artifacts (direct invocation can return early).
+        $process = Start-Process -FilePath $exe `
+            -ArgumentList @("demo", "memory-strategy", "--data-dir", $smokeDir) `
+            -Wait -PassThru -WindowStyle Hidden
+        if ($process.ExitCode -ne 0) {
+            throw "Packaged demo exited with code $($process.ExitCode)"
         }
         # Verify the files on disk rather than relying on the JSON paths printed
         # by the child process.  Recursive enumeration is robust to a provider
