@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "delivery_date": "2026-10-04",
   "github": "https://github.com/miasaka-mikoto/ai-scientist-mini",
-  "local_commit": "a25f354",
-  "github_commit": "00e3542e8a98d084a6548c9787a95479f3527743",
+  "local_commit": "fa76ee6",
+  "github_commit": "d00b89e409cb4a5c54a640713b091e17a696c6e1",
   "demo": {
     "study": "Memory Strategy Study",
     "hypotheses": 5,
@@ -22,12 +22,14 @@
     "cli_smoke_test": "passed",
     "wheel_smoke_test": "passed",
     "linux_binary_smoke_test": "passed",
+    "windows_binary_smoke_test": "passed in GitHub Actions run 37229397739",
     "restart_checkpoint": "JSON and SQLite round-trip passed"
   },
   "artifacts": {
     "source": "AI_Scientist_Mini_source_v0.1.0.zip",
     "wheel": "ai_scientist_mini-0.1.0-py3-none-any.whl",
     "linux_portable": "AIScientistMini_linux_x86_64_v0.1.0.tar.gz",
+    "windows_portable": "AIScientistMini_windows_x86_64_v0.1.0.zip",
     "report_markdown": "AI_Scientist_Mini_research_report.md",
     "report_html": "AI_Scientist_Mini_research_report.html",
     "demo_database": "AI_Scientist_Mini_demo.sqlite3",
