@@ -143,8 +143,11 @@ if ($SmokeDemo) {
         # enumeration while the packaged process has just finished writing.
         $reportPath = Join-Path $smokeDir "research_report.md"
         $manifestPath = Join-Path $smokeDir "reproducibility_manifest.json"
-        $reports = @($reportPath, $manifestPath) | Where-Object { Test-Path -LiteralPath $_ }
-        if ($reports.Count -lt 1) {
+        $reports = @(
+            @($reportPath, $manifestPath) |
+                Where-Object { Test-Path -LiteralPath $_ }
+        )
+        if ($reports.Length -lt 1) {
             throw "Packaged demo did not produce a report or reproducibility manifest."
         }
         Write-Host "Packaged demo smoke test passed ($($reports.Count) report/manifest files)."
