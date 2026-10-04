@@ -1,0 +1,41 @@
+{
+  "project": "AI Scientist Mini",
+  "chinese_name": "自动实验科学家",
+  "version": "0.1.0",
+  "delivery_date": "2026-10-04",
+  "github": "https://github.com/miasaka-mikoto/ai-scientist-mini",
+  "local_commit": "e39c534",
+  "demo": {
+    "study": "Memory Strategy Study",
+    "hypotheses": 5,
+    "configurations": 5,
+    "experiments": 7,
+    "runs": 26,
+    "selection_rounds": 2,
+    "estimated_api_cost_usd": 0.0,
+    "provider": "SyntheticProvider / RuleBasedScientist"
+  },
+  "verification": {
+    "pytest": "16 passed",
+    "compileall": "passed",
+    "cli_smoke_test": "passed",
+    "wheel_smoke_test": "passed",
+    "linux_binary_smoke_test": "passed",
+    "restart_checkpoint": "JSON and SQLite round-trip passed"
+  },
+  "artifacts": {
+    "source": "AI_Scientist_Mini_source_v0.1.0.zip",
+    "wheel": "ai_scientist_mini-0.1.0-py3-none-any.whl",
+    "linux_portable": "AIScientistMini_linux_x86_64_v0.1.0.tar.gz",
+    "report_markdown": "AI_Scientist_Mini_research_report.md",
+    "report_html": "AI_Scientist_Mini_research_report.html",
+    "demo_database": "AI_Scientist_Mini_demo.sqlite3",
+    "dashboard_screenshot": "AI_Scientist_Mini_dashboard.png"
+  },
+  "safety": [
+    "No paid model API was called during development or demo execution",
+    "Default provider is local synthetic/mock and estimated API cost is zero",
+    "Budget, run limit, runtime limit, stop button, approval gate and deduplication are implemented",
+    "Windows build script produces a real AIScientistMini.exe when run on Windows; this Linux host does not fabricate a Windows binary"
+  ]
+}
